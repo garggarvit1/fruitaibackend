@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
-    const api=`mongodb+srv://garggarvit12:garg1234@cluster0.7bembvg.mongodb.net/fruitAi`
   try {
-    const conn = await mongoose.connect(api, {
+    const conn = await mongoose.connect(process.env.MONGO_URI , {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -15,5 +14,3 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
-
-// process.env.MONGO_URI 
